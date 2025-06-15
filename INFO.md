@@ -8,6 +8,8 @@
 
 ## 001 Django ORM Deep Dive - Models, Migrations and Admin UI Integration
 
+[https://www.youtube.com/watch?v=t7diJPGxCGo&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=2]
+
 ```
 $ mkdir orm_series
 $ cd orm_series
@@ -32,4 +34,7 @@ ubuntuuser@ubuntuserver.com
 
 ```
 
+## 002 Django ORM - Querying and Creating Records / Working with Foreign Keys
+
+[https://www.youtube.com/watch?v=46au1MxtOJE&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=3]
 

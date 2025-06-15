@@ -1,0 +1,154 @@
+from django.contrib.auth.models import User
+from core.models import Restaurant, Rating, Sale
+from django.utils import timezone
+from django.db import connection
+from pprint import pprint
+
+def run():
+  # 23
+  user = User.objects.first()
+  restaurant = Restaurant.objects.first()
+  rating, created = Rating.objects.get_or_create(
+    restaurant=restaurant,
+    user=user,
+    rating=4
+  )
+  if created:
+    # send mail
+    pass
+
+  # # 23
+  # user = User.objects.first()
+  # restaurant = Restaurant.objects.first()
+  # print(Rating.objects.get_or_create(
+  #   restaurant=restaurant,
+  #   user=user,
+  #   rating=4
+  # ))
+  # pprint(connection.queries)
+  
+  # # 22
+  # restaurant = Restaurant.objects.first()
+  # print(restaurant.sales.all())
+  
+  # 21
+  # Sale.objects.create(
+  #   restaurant= Restaurant.objects.first(),
+  #   income=2.33,
+  #   datetime=timezone.now()
+  # )
+  # Sale.objects.create(
+  #   restaurant= Restaurant.objects.first(),
+  #   income=5.33,
+  #   datetime=timezone.now()
+  # )
+  # Sale.objects.create(
+  #   restaurant= Restaurant.objects.first(),
+  #   income=8.33,
+  #   datetime=timezone.now()
+  # )
+  
+  # # 20
+  # retaurant = Restaurant.objects.first()
+  # print(retaurant.ratings.all())
+  
+  # # 19
+  # retaurant = Restaurant.objects.first()
+  # print(retaurant.rating_set.all())
+  
+  # # 18
+  # rating = Rating.objects.first()
+  # print(rating.restaurant) 
+  # print(connection.queries) 
+
+  # # 17
+  # restaurant = Restaurant.objects.first()
+  # print(restaurant.name)
+  # restaurant.name = 'jibberish'
+  # restaurant.save()
+  # print(connection.queries)  
+
+  # # 16
+  # print(Rating.objects.exclude(rating__lte=3))
+  # print(connection.queries)  
+
+  # # 15
+  # print(Rating.objects.filter(rating__lte=3))
+  # print(connection.queries)  
+
+  # # 14
+  # print(Rating.objects.filter(rating__gte=3))
+  # print(connection.queries)  
+
+  # # 13
+  # print(Rating.objects.filter(rating=3))
+  # print(connection.queries)  
+
+  # # 12
+  # print(Rating.objects.filter(rating=3))
+  # print(Rating.objects.filter(rating=5))
+
+  # # 11
+  # print(Rating.objects.all())
+
+  # # 010
+  # restaurant = Restaurant.objects.first()
+  # user = User.objects.first()
+  
+  # Rating.objects.create(
+  #   user=user,
+  #   restaurant=restaurant,
+  #   rating=3
+  # )
+  
+  # # 009
+  # print(Restaurant.objects.last())  
+  # print(connection.queries)  
+
+  # # 008
+  # print(Restaurant.objects.count())  
+  # print(connection.queries)  
+
+  # # 007
+  # print(Restaurant.objects.all())  
+  # print(connection.queries)  
+
+  # # 006
+  # Restaurant.objects.create(
+  #   name="Pizza Shop",
+  #   date_opened=timezone.now(),
+  #   restaurant_type=Restaurant.TypeChoices.ITALIAN,
+  #   latitude=50.2,
+  #   longitude=50.5
+  # )
+  # print(connection.queries)  
+
+  # # 005
+  # restautant = Restaurant.objects.all()[0]
+  # print(restautant)  
+  # print(connection.queries)  
+
+  # # 004
+  # restautant = Restaurant.objects.first()
+  # print(restautant)  
+  # print(connection.queries)  
+
+  # # 003
+  # restautants = Restaurant.objects.all()
+  # print(restautants)  
+  # print(connection.queries)  
+
+  # # 002
+  # restautants = Restaurant.objects.all()
+  # print(restautants)  
+  
+  # # 001
+  # restaurant = Restaurant()
+  # restaurant.name = 'My Italian Restaurant'
+  # restaurant.latitude = 50.2
+  # restaurant.longitude = 50.2
+  # restaurant.date_opened = timezone.now()
+  # restaurant.restaurant_type = Restaurant.TypeChoices.ITALIAN
+  
+  # restaurant.save()
+    
