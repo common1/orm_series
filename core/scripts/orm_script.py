@@ -5,17 +5,37 @@ from django.db import connection
 from pprint import pprint
 
 def run():
-  # 23
+  # 25
   user = User.objects.first()
   restaurant = Restaurant.objects.first()
-  rating, created = Rating.objects.get_or_create(
-    restaurant=restaurant,
+  rating = Rating.objects.create(
     user=user,
-    rating=4
+    restaurant=restaurant,
+    rating=9    
   )
-  if created:
-    # send mail
-    pass
+  rating.full_clean()
+  rating.save()
+
+  # # 24
+  # user = User.objects.first()
+  # restaurant = Restaurant.objects.first()
+  # rating = Rating.objects.create(
+  #   user=user,
+  #   restaurant=restaurant,
+  #   rating=9    
+  # )
+
+  # # 23
+  # user = User.objects.first()
+  # restaurant = Restaurant.objects.first()
+  # rating, created = Rating.objects.get_or_create(
+  #   restaurant=restaurant,
+  #   user=user,
+  #   rating=4
+  # )
+  # if created:
+  #   # send mail
+  #   pass
 
   # # 23
   # user = User.objects.first()

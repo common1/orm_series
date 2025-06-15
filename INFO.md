@@ -38,3 +38,7 @@ ubuntuuser@ubuntuserver.com
 
 [https://www.youtube.com/watch?v=46au1MxtOJE&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=3]
 
+# 003 Django ORM - Model Field Validators / Writing Custom Validators / ModelForms
+
+[https://www.youtube.com/watch?v=1x0Zdukpjrs&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=4]
+
