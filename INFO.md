@@ -54,7 +54,11 @@ ubuntuuser@ubuntuserver.com
 
 [https://www.youtube.com/watch?v=84BBAGEu064&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=6]
 
+```
 $ python manage.py createdata
+```
 
-Current: 7:44
+# 005 Django ORM - QuerySet Filtering and Lookups / Ordering and Slicing QuerySets - Part 2
+
+Current: 11:27
 

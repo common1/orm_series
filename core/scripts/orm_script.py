@@ -5,10 +5,32 @@ from django.db import connection
 from pprint import pprint
 
 def run():
-  # 37 (Video 6)
-  restaurant = Restaurant.objects.filter(name='Pizzeria 1')
-  print(restaurant.count())
-  pprint(connection.queries)
+  # 40 (Video 6)
+  chinese = Restaurant.TypeChoices.CHINESE
+  restaurants = Restaurant.objects.filter(restaurant_type=chinese)
+  print(restaurants)
+  print(connection.queries)
+
+  # # 40 (Video 6)
+  # restaurant = Restaurant.objects.filter(name='Jibberisch')
+  # print(restaurant.exists())
+
+  # # 40 (Video 6)
+  # restaurant = Restaurant.objects.filter(restaurant_type=Restaurant.TypeChoices.ITALIAN)
+  # print(restaurant.exists())
+
+  # # 39 (Video 6)
+  # restaurant = Restaurant.objects.filter(restaurant_type=Restaurant.TypeChoices.ITALIAN)
+  # print(restaurant)
+
+  # # 38 (Video 6)
+  # restaurant = Restaurant.objects.get(name='Pizzeria 1')
+  # print(restaurant)
+
+  # # 37 (Video 6)
+  # restaurant = Restaurant.objects.filter(name='Pizzeria 1')
+  # print(restaurant)
+  # print(restaurant.get())
 
   # # 36 (Video 6)
   # # Filter down to only chinese restaurants
