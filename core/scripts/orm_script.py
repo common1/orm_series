@@ -5,16 +5,34 @@ from django.db import connection
 from pprint import pprint
 
 def run():
-  # 29 (Video 5)
-  restaurants = Restaurant.objects.all()
-  restaurants.update(
-    date_opened=timezone.now()
-  )
+  # # 32 (Video 5)
+  Restaurant.objects.all().delete()
   pprint(connection.queries)
 
-  # # 28 (Video 5)
+  # # 31 (Video 5)
+  # restaurant = Restaurant.objects.first()
+  # print(restaurant.delete())
+  # pprint(connection.queries)
+
+  # # 30 (Video 5)
+  # restaurants = Restaurant.objects.filter(name__startswith='M')
+  # print(restaurants)
+  # print(restaurants.update(
+  #   date_opened=timezone.now() - timezone.timedelta(days=365),
+  #   website='https://test.com'
+  # ))
+  # pprint(connection.queries)
+
+  # # 29 (Video 5)
+  # restaurants = Restaurant.objects.all()
+  # restaurants.update(
+  #   date_opened=timezone.now()
+  # )
+  # pprint(connection.queries)
+
+  # 28 (Video 5)
   # restaurant = Restaurant()
-  # restaurant.name = 'My Italian Restaurant #2'
+  # restaurant.name = 'My Italian Restaurant #5'
   # restaurant.date_opened = timezone.now()
   # restaurant.restaurant_type = Restaurant.TypeChoices.ITALIAN
   # restaurant.latitude = 50.2
@@ -44,7 +62,7 @@ def run():
   # rating = Rating.objects.create(
   #   user=user,
   #   restaurant=restaurant,
-  #   rating=9    
+  #   rating=3   
   # )
   # rating.full_clean()
   # rating.save()
@@ -84,7 +102,7 @@ def run():
   # restaurant = Restaurant.objects.first()
   # print(restaurant.sales.all())
   
-  # 21
+  # # 21
   # Sale.objects.create(
   #   restaurant= Restaurant.objects.first(),
   #   income=2.33,
@@ -189,12 +207,12 @@ def run():
   # # 003
   # restautants = Restaurant.objects.all()
   # print(restautants)  
-  # print(connection.queries)  
+  # print(connection.queries)
 
   # # 002
   # restautants = Restaurant.objects.all()
-  # print(restautants)  
-  
+  # print(restautants)
+
   # # 001
   # restaurant = Restaurant()
   # restaurant.name = 'My Italian Restaurant'
@@ -202,6 +220,6 @@ def run():
   # restaurant.longitude = 50.2
   # restaurant.date_opened = timezone.now()
   # restaurant.restaurant_type = Restaurant.TypeChoices.ITALIAN
-  
+
   # restaurant.save()
-    
+
