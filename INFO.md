@@ -42,3 +42,10 @@ ubuntuuser@ubuntuserver.com
 
 [https://www.youtube.com/watch?v=1x0Zdukpjrs&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=4]
 
+
+# 004 Django ORM - Updating and Deleting QuerySets / ForeignKey on_delete behaviour - Part 1
+
+[https://www.youtube.com/watch?v=cN4zjbcM2kk&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=5]
+
+Current: 8 :50
+

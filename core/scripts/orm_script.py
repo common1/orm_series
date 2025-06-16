@@ -5,16 +5,49 @@ from django.db import connection
 from pprint import pprint
 
 def run():
-  # 25
-  user = User.objects.first()
-  restaurant = Restaurant.objects.first()
-  rating = Rating.objects.create(
-    user=user,
-    restaurant=restaurant,
-    rating=9    
+  # 29 (Video 5)
+  restaurants = Restaurant.objects.all()
+  restaurants.update(
+    date_opened=timezone.now()
   )
-  rating.full_clean()
-  rating.save()
+  pprint(connection.queries)
+
+  # # 28 (Video 5)
+  # restaurant = Restaurant()
+  # restaurant.name = 'My Italian Restaurant #2'
+  # restaurant.date_opened = timezone.now()
+  # restaurant.restaurant_type = Restaurant.TypeChoices.ITALIAN
+  # restaurant.latitude = 50.2
+  # restaurant.longitude = 50.2  
+  # restaurant.save()
+  # pprint(connection.queries)
+
+  # # 27 (Video 5)
+  # restaurant = Restaurant.objects.first()
+  # print(restaurant.name)
+  # restaurant.name = 'New Restaurant Name'
+  # restaurant.save(update_fields=['name'])
+  # print(restaurant.name)
+  # pprint(connection.queries)
+
+  # # 26 (Video 5)
+  # restaurant = Restaurant  # pprint(connection.queries)
+  # print(restaurant.name)
+  # restaurant.name = 'New Restaurant Name'
+  # restaurant.save()
+  # print(restaurant.name)
+  # pprint(connection.queries)
+  
+  # # 25 (Video 4
+  # user = User.objects.first()
+  # restaurant = Restaurant.objects.first()
+  # rating = Rating.objects.create(
+  #   user=user,
+  #   restaurant=restaurant,
+  #   rating=9    
+  # )
+  # rating.full_clean()
+  # rating.save()
 
   # # 24
   # user = User.objects.first()
