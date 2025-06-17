@@ -4,14 +4,86 @@ from django.utils import timezone
 from django.db import connection
 from pprint import pprint
 
+
 def run():
-  # 40 (Video 6)
-  chinese = Restaurant.TypeChoices.CHINESE
-  restaurants = Restaurant.objects.filter(restaurant_type=chinese)
+  # 51 (Video 6)
+  restaurants = Restaurant.objects.order_by('name').reverse()
   print(restaurants)
   print(connection.queries)
 
-  # # 40 (Video 6)
+  # # 51 (Video 6)
+  # restaurants = Restaurant.objects.order_by('name')
+  # print(restaurants)
+  # print(connection.queries)
+
+# def run():
+#   # 50 (Video 6)
+#   sales = Sale.objects.filter(income__range=(50, 60))
+#   print([sale.income for sale in sales])
+#   print(connection.queries)
+
+# def run():
+#   # 49 (Video 6)
+#   sales = Sale.objects.filter(income__gt=90)
+#   print(sales)
+#   print(connection.queries)
+
+# def run():
+#   # 49 (Video 6)
+#   restaurants = Restaurant.objects.filter(longitude__lt=0)
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 48 (Video 6)
+#   restaurants = Restaurant.objects.exclude(longitude__gt=0)
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 47 (Video 6)
+#   restaurants = Restaurant.objects.filter(longitude__gt=0)
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 46 (Video 6)
+#   restaurants = Restaurant.objects.filter(name__lt='E')
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 45 (Video 6)
+#   chinese = Restaurant.TypeChoices.CHINESE
+#   indian = Restaurant.TypeChoices.INDIAN
+#   restaurants = Restaurant.objects.exclude(restaurant_type__in=[chinese, indian])
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 44 (Video 6)
+#   chinese = Restaurant.TypeChoices.CHINESE
+#   restaurants = Restaurant.objects.exclude(restaurant_type=chinese)
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 43 (Video 6)
+#   chinese = Restaurant.TypeChoices.CHINESE
+#   indian = Restaurant.TypeChoices.index
+#   mexican = Restaurant.TypeChoices.MEXICAN
+#   checktypes = [chinese, indian, mexican]
+#   restaurants  = Restaurant.objects.filter(restaurant_type__in=checktypes)
+#   print(restaurants)
+#   print(connection.queries)
+
+  # # 42 (Video 6)
+  # chinese = Restaurant.TypeChoices.CHINESE
+  # restaurants = Restaurant.objects.filter(restaurant_type=chinese, name__startswith='C')
+  # print(restaurants)
+  # print(connection.queries)
+
+  # # 41 (Video 6)
   # restaurant = Restaurant.objects.filter(name='Jibberisch')
   # print(restaurant.exists())
 
