@@ -1,14 +1,44 @@
 {% extends 'base.html' %}
 
+{% block content %}
+
+
+
+{% endblock %}
+
+{% comment %}
 
 {% block content %}
 
-<form method="POST">
-    {% csrf_token %}
-
-    {{ form.as_p }}
-    
-    <button class="btn btn-primary" type="submit">Submit</button>
-</form>
+{% for rating in ratings %}
+    <p>{{rating.restaurant.name}} -  { rating}</p>
+{% endfor %}
 
 {% endblock %}
+
+{% endcomment %}
+
+{% comment %}
+
+{% block content %}
+
+{% for restaurant in restaurants %}
+    <p>{{ restaurant.name }}</p>
+
+    <ul>
+        {% for rating in restaurant.ratings.all %}
+        <li>{{ rating.rating }}</li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for sale in restaurant.sales.all %}
+        <li>{{ sale.income }}</li>
+        {% endfor %}
+    </ul>
+
+    {% endfor %}
+
+{% endblock %}
+
+{% endcomment %}

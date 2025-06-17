@@ -70,3 +70,39 @@ $ python manage.py createdata
 
 ...
 
+# 006 Django Query Optimization / select_related & prefetch_related / django-debug-toolbar / N+1 Problem - Part 1
+
+[https://www.youtube.com/watch?v=a3dTy8RO5Ho&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=7]
+[https://django-debug-toolbar.readthedocs.io/en/latest/installation.html]
+
+```
+$ pip install django-debug-toolbar
+
+File: orm_series/settings.py
+INSTALLED_APPS = [
+    ...
+    'debug_toolbar',
+]
+...
+MIDDLEWARE = [
+    ...
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    ...
+]
+...
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
+
+File: orm_series/urls.py
+urlpatterns = [
+    ...
+    path('__debug__/', include("debug_toolbar.urls")),
+]
+
+```
+
+Current: 24:10
+
