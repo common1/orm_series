@@ -60,9 +60,13 @@ $ python manage.py createdata
 
 # 005 Django ORM - QuerySet Filtering and Lookups / Ordering and Slicing QuerySets - Part 2
 
-'''
+...
 
 # 005 Django ORM - QuerySet Filtering and Lookups / Ordering and Slicing QuerySets - Part 3
 
-Current: 24:37
+...
+
+# 005 Django ORM - QuerySet Filtering and Lookups / Ordering and Slicing QuerySets - Part 4
+
+...
 

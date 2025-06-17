@@ -4,17 +4,84 @@ from django.utils import timezone
 from django.db import connection
 from pprint import pprint
 
-
 def run():
-  # 51 (Video 6)
-  restaurants = Restaurant.objects.order_by('name').reverse()
-  print(restaurants)
+  chinese = Restaurant.TypeChoices.CHINESE
+  sales = Sale.objects.filter(restaurant__restaurant_type=chinese)
+  print(sales)
   print(connection.queries)
 
-  # # 51 (Video 6)
-  # restaurants = Restaurant.objects.order_by('name')
-  # print(restaurants)
-  # print(connection.queries)
+# def run():
+#   # 60 (Video 6)
+#   # find all ratings associated with a restaurant beginning with 'C'
+#   ratings = Rating.objects.filter(restaurant__name__startswith='C')
+#   print(ratings)
+#   print(connection.queries)
+
+# def run():
+#   # 59 (Video 6)
+#   restaurant = Restaurant.objects.latest()
+#   print(restaurant)
+#   print(connection.queries)
+
+# def run():
+#   # 58 (Video 6)
+#   restaurant = Restaurant.objects.latest('date_opened')
+#   print(restaurant)
+#   print(connection.queries)
+
+# def run():
+#   # 57 (Video 6)
+#   restaurant = Restaurant.objects.earliest('date_opened')
+#   print(restaurant)
+#   print(connection.queries)
+
+# def run():
+#   # 56 (Video 6)
+#   restaurants = Restaurant.objects.order_by('date_opened')[2:5]
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 55 (Video 6)
+#   restaurants = Restaurant.objects.order_by('date_opened')[:5]
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 54 (Video 6)
+#   restaurants = Restaurant.objects.order_by('date_opened')[0]
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 53 (Video 6)
+#   restaurants = Restaurant.objects.order_by('date_opened')
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 52 (Video 6)
+#   restaurants = Restaurant.objects.order_by(Lower('name'))
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 53 (Video 6)
+#   sales = Sale.objects.order_by('-datetime')
+#   print(sales)
+#   print(connection.queries)
+
+# def run():
+#   # 52 (Video 6)
+#   restaurants = Restaurant.objects.order_by('-name')
+#   print(restaurants)
+#   print(connection.queries)
+
+# def run():
+#   # 51 (Video 6)
+#   restaurants = Restaurant.objects.order_by('name').reverse()
+#   print(restaurants)
+#   print(connection.queries)
 
 # def run():
 #   # 50 (Video 6)
@@ -77,32 +144,38 @@ def run():
 #   print(restaurants)
 #   print(connection.queries)
 
-  # # 42 (Video 6)
-  # chinese = Restaurant.TypeChoices.CHINESE
-  # restaurants = Restaurant.objects.filter(restaurant_type=chinese, name__startswith='C')
-  # print(restaurants)
-  # print(connection.queries)
+# def run():
+#   # 42 (Video 6)
+#   chinese = Restaurant.TypeChoices.CHINESE
+#   restaurants = Restaurant.objects.filter(restaurant_type=chinese, name__startswith='C')
+#   print(restaurants)
+#   print(connection.queries)
 
-  # # 41 (Video 6)
-  # restaurant = Restaurant.objects.filter(name='Jibberisch')
-  # print(restaurant.exists())
+# def run():
+#   # 41 (Video 6)
+#   restaurant = Restaurant.objects.filter(name='Jibberisch')
+#   print(restaurant.exists())
 
-  # # 40 (Video 6)
-  # restaurant = Restaurant.objects.filter(restaurant_type=Restaurant.TypeChoices.ITALIAN)
-  # print(restaurant.exists())
+# def run():
+#   # 40 (Video 6)
+#   restaurant = Restaurant.objects.filter(restaurant_type=Restaurant.TypeChoices.ITALIAN)
+#   print(restaurant.exists())
 
-  # # 39 (Video 6)
-  # restaurant = Restaurant.objects.filter(restaurant_type=Restaurant.TypeChoices.ITALIAN)
-  # print(restaurant)
+# def run():
+#   # 39 (Video 6)
+#   restaurant = Restaurant.objects.filter(restaurant_type=Restaurant.TypeChoices.ITALIAN)
+#   print(restaurant)
 
-  # # 38 (Video 6)
-  # restaurant = Restaurant.objects.get(name='Pizzeria 1')
-  # print(restaurant)
+# def run():
+#   # 38 (Video 6)
+#   restaurant = Restaurant.objects.get(name='Pizzeria 1')
+#   print(restaurant)
 
-  # # 37 (Video 6)
-  # restaurant = Restaurant.objects.filter(name='Pizzeria 1')
-  # print(restaurant)
-  # print(restaurant.get())
+# def run():
+#   # 37 (Video 6)
+#   restaurant = Restaurant.objects.filter(name='Pizzeria 1')
+#   print(restaurant)
+#   print(restaurant.get())
 
   # # 36 (Video 6)
   # # Filter down to only chinese restaurants
