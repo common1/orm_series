@@ -104,5 +104,7 @@ urlpatterns = [
 
 ```
 
-Current: 24:10
+# 006 Django Query Optimization / select_related & prefetch_related / django-debug-toolbar / N+1 Problem - Part 2
+
+Current: 25:41
 
