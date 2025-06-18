@@ -40,6 +40,18 @@ class Restaurant(models.Model):
         # print(self._state.adding)
         super().save(*args, **kwargs)
 
+class Staff(models.Model):
+    name = models.CharField(max_length=128)
+    restaurants = models.ManyToManyField(Restaurant, through='StaffRestaurant')
+
+    def __str__(self):
+        return self.name
+
+class StaffRestaurant(models.Model):
+    staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    salary = models.FloatField(null=True)
+
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     restaurant = models.ForeignKey(
@@ -56,9 +68,9 @@ class Rating(models.Model):
 
 class Sale(models.Model):
     restaurant = models.ForeignKey(
-        Restaurant, 
-        on_delete=models.SET_NULL, 
-        null=True, 
+        Restaurant,
+        on_delete=models.SET_NULL,
+        null=True,
         related_name='sales'
     )
     income = models.DecimalField(max_digits=8, decimal_places=2)

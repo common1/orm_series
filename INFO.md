@@ -112,3 +112,16 @@ urlpatterns = [
 
 ...
 
+# 007 Django ManyToManyFields and Through-Models for many-to-many relationships - Part 1
+
+[https://www.youtube.com/watch?v=MECLUHlgF2w&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=8]
+
+```
+Delete db.sqlite3
+Remove migrations
+Remove cache
+$ python manage.py makemigrations
+$ python mange.py migrate
+$ python manage.py create_data
+```
+
