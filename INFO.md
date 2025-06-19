@@ -124,4 +124,7 @@ $ python manage.py makemigrations
 $ python mange.py migrate
 $ python manage.py create_data
 ```
+# 008 Django Aggregation & Annotation / values() and values_list() functions - Part 1
+
+[https://www.youtube.com/watch?v=LEsmHKZLsBI&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=9]
 
