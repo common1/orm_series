@@ -3,15 +3,29 @@ from core.models import Restaurant, Rating, Sale, Staff, StaffRestaurant
 from django.utils import timezone
 from django.db.models.functions import Upper, Length, Concat
 from django.db import connection
-from django.db.models import Count, Avg, Min, Max, Sum, StdDev, Variance, CharField, Value
+from django.db.models import Count, Avg, Min, Max, Sum, StdDev, Variance, CharField, Value, F
 from pprint import pprint
 import random
 
 def run():
-  # 105
-  restaurants = Restaurant.objects.annotate(total_sales=Sum('sales__income')).filter(total_sales__lt=300)
-  print(restaurants.aggregate(avg_sales=Avg('total_sales')))
+  # 107
+  rating = Rating.objects.filter(rating=3).first()
+  rating.rating = F('rating') + 1
+  rating.save()
   pprint(connection.queries)
+
+# def run():
+#   # 106
+#   rating = Rating.objects.filter(rating=3).first()
+#   rating.rating += 1
+#   rating.save()
+#   pprint(connection.queries)
+
+# def run():
+#   # 105
+#   restaurants = Restaurant.objects.annotate(total_sales=Sum('sales__income')).filter(total_sales__lt=300)
+#   print(restaurants.aggregate(avg_sales=Avg('total_sales')))
+#   pprint(connection.queries)
 
 # def run():
 #   # 104
