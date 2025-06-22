@@ -8,11 +8,23 @@ from pprint import pprint
 import random
 
 def run():
-  # 107
-  rating = Rating.objects.filter(rating=3).first()
-  rating.rating = F('rating') + 1
-  rating.save()
-  pprint(connection.queries)
+  # 109
+  sales = Sale.objects.all()
+  for sale in sales:
+    sale.expenditure = random.uniform(5, 100)
+  Sale.objects.bulk_update(sales, ['expenditure'])    
+
+# def run():
+#   # 108
+#   Rating.objects.update(rating=F('rating') * 2)
+#   pprint(connection.queries)
+
+# def run():
+#   # 107
+#   rating = Rating.objects.filter(rating=3).first()
+#   rating.rating = F('rating') + 1
+#   rating.save()
+#   pprint(connection.queries)
 
 # def run():
 #   # 106

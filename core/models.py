@@ -74,5 +74,6 @@ class Sale(models.Model):
         related_name='sales'
     )
     income = models.DecimalField(max_digits=8, decimal_places=2)
+    expenditure = models.DecimalField(max_digits=8, decimal_places=2)
     datetime = models.DateTimeField()
 
