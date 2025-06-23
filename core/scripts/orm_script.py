@@ -3,16 +3,52 @@ from core.models import Restaurant, Rating, Sale, Staff, StaffRestaurant
 from django.utils import timezone
 from django.db.models.functions import Upper, Length, Concat
 from django.db import connection
-from django.db.models import Count, Avg, Min, Max, Sum, StdDev, Variance, CharField, Value, F
+from django.db.models import Count, Avg, Min, Max, Sum, StdDev, Variance, CharField, Value, F, Q
 from pprint import pprint
 import random
 
 def run():
-  # 109
-  sales = Sale.objects.all()
-  for sale in sales:
-    sale.expenditure = random.uniform(5, 100)
-  Sale.objects.bulk_update(sales, ['expenditure'])    
+    rating = Rating.objects.first()
+    print(rating.rating)
+    rating.rating = F('rating') + 1
+    rating.save()
+    rating.refresh_from_db()
+    print(rating.rating)
+
+# def run():
+#   # 113
+#   sales = Sale.objects.aggregate(
+#     profit=Count('id', filter=Q(income__gt=F('expenditure'))),
+#     loss=Count('id', filter=Q(income__lt=F('expenditure'))),
+#   )
+#   print(sales)
+
+# def run():
+#   # 112
+#   sales = Sale.objects.annotate(
+#     profit=F('income') - F('expenditure')
+#   ).order_by('-profit')
+#   print(sales.first().profit)
+
+# def run():
+#   # 111
+#   sales = Sale.objects.annotate(
+#     profit=F('income') - F('expenditure')
+#   )
+#   print(sales.first().profit)
+
+# def run():
+#   # 110
+#   sales = Sale.objects.filter(expenditure__gt=F('income'))
+#   print(sales)
+#   pprint(connection.queries)
+
+# def run():
+#   # 109
+#   sales = Sale.objects.all()
+#   for sale in sales:
+#     sale.expenditure = random.uniform(5, 100)
+#   Sale.objects.bulk_update(sales, ['expenditure'])
 
 # def run():
 #   # 108

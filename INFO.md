@@ -136,3 +136,7 @@ $ python manage.py create_data
 
 ...
 
+# 009 Django - F Expressions for database-level operations - Part 3
+
+...
+
