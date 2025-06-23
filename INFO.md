@@ -140,3 +140,9 @@ $ python manage.py create_data
 
 ...
 
+# 010 Django Q Objects / Filtering with OR and NOT Conditions / Pattern Matching and Regex Lookups - Part 1
+
+[https://www.youtube.com/watch?v=Pc96-4_gqJ4&list=PL-2EBeDYMIbQXKsyNweppuFptuogJe2L-&index=11]
+
+Current: 5:47
+

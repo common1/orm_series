@@ -8,12 +8,32 @@ from pprint import pprint
 import random
 
 def run():
-    rating = Rating.objects.first()
-    print(rating.rating)
-    rating.rating = F('rating') + 1
-    rating.save()
-    rating.refresh_from_db()
-    print(rating.rating)
+  # 115
+  # Find any restaurants that have the number 1 in the name
+  print(
+    Restaurant.objects.filter(name__icontains="1")
+  )
+
+  pprint(connection.queries)
+
+# def run():
+#   # 114
+#   # Get all Italian or Mexican restaurants
+#   it = Restaurant.TypeChoices.ITALIAN
+#   mex = Restaurant.TypeChoices.MEXICAN
+#   print(Restaurant.objects.filter(
+#     Q(restaurant_type=it) | Q(restaurant_type=mex)
+#   ))
+#   pprint(connection.queries)
+
+# def run():
+#   # 113
+#   rating = Rating.objects.first()
+#   print(rating.rating)
+#   rating.rating = F('rating') + 1
+#   rating.save()
+#   rating.refresh_from_db()
+#   print(rating.rating)
 
 # def run():
 #   # 113
